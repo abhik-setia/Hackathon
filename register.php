@@ -1,63 +1,16 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>New Member or Login</title>
-      <meta name="google-signin-client_id" content="633386475152-8bievi6ectem27ic6ta2li01h908iggp.apps.googleusercontent.com">
-      <?php include 'CDN.php'; ?>
+      <title>Register Here</title>
+           <?php include 'CDN.php'; ?>
+ 
    </head>
-   <script type="text/javascript">
-
-   	function login(){
-   		window.location="take_command.php";
-   	}
-     var auth2 = auth2 || {};
-     (function() {
-       var po = document.createElement('script');
-       po.type = 'text/javascript'; po.async = true;
-       po.src = 'https://plus.google.com/js/client:plusone.js?onload=startApp';
-       var s = document.getElementsByTagName('script')[0];
-       s.parentNode.insertBefore(po, s);
-     })();
-     /**
-      * Handler for the signin callback triggered after the user selects an account.
-      */
-     function onSignInCallback(resp) {
-       gapi.client.load('plus', 'v1', apiClientLoaded);
-     }
-
-     /**
-      * Sets up an API call after the Google API client loads.
-      */
-     function apiClientLoaded() {
-       gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
-     }
-
-     /**
-      * Response callback for when the API client receives a response.
-      *
-      * @param resp The API response object with the user email and profile information.
-      */
-     function handleEmailResponse(resp) {
-        console.log(resp.emails[0]);
-        document.getElementById('responseContainer').value =JSON.stringify(resp);
-
-        //var primaryEmail;
-       //for (var i=0; i < resp.emails.length; i++) {
-       //   if (resp.emails[i].type === 'account') primaryEmail = resp.emails[i].value;
-       // }
-
-       // document.getElementById('responseContainer').value = 'Primary email: ' +
-       //     primaryEmail + '\n\nFull Response:\n' + JSON.stringify(resp);
-     }
-
-     </script>
-
    <body>
       <div class="container">
          <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-info" >
                <div class="panel-heading">
-                  <div class="panel-title">Sign In</div>
+                  <div class="panel-title">Sign In hi</div>
                   <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
                </div>
                <div style="padding-top:30px" class="panel-body" >
@@ -81,24 +34,10 @@
                      <div style="margin-top:10px" class="form-group">
                         <!-- Button -->
                         <div class="col-sm-12 controls">
-                       <!--     <a id="btn-login" href="#" class="btn btn-success">Login  </a>
-                            <a  href="#" id="signOut" onclick="login()" class="btn btn-social btn-google">
-                            <span class="fa fa-google"></span>
-                            Login with Google</a>
-                        -->  <!-- Container with the Sign-In button. -->
-						    <div id="gConnect" class="button">
-						      <button class="g-signin"
-						          data-scope="email"
-						          data-clientid="633386475152-8bievi6ectem27ic6ta2li01h908iggp.apps.googleusercontent.com"
-						          data-callback="onSignInCallback"
-						          data-theme="dark"
-						          data-cookiepolicy="single_host_origin">
-						      </button>
-						   </div>
-						                     </div>
-                     <div id="response" class="hide">
-        <textarea id="responseContainer" style="width:100%; height:150px"></textarea>
-      </div>
+                           <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                           <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
+                        </div>
+                     </div>
                      <div class="form-group">
                         <div class="col-md-12 control">
                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
@@ -164,7 +103,7 @@
                      </div>
                      <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
                         <div class="col-md-offset-3 col-md-9">
-                           <button id="btn-fbsignup" type="button" class="btn btn-social btn-google"><span class="fa fa-google"></span> Sign Up with Google +</button>
+                           <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
                         </div>
                      </div>
                   </form>
@@ -172,6 +111,5 @@
             </div>
          </div>
       </div>
-      
    </body>
 </html>
